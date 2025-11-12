@@ -156,10 +156,27 @@ header.nav {
   color: var(--purple);
   font-size: 1.5rem;
   cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 200ms ease;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background: rgba(52, 3, 52, 0.1);
+  outline: none;
+}
+
+.hamburger.is-open {
+  transform: rotate(90deg);
 }
 
 header nav {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0.75rem;
   padding: 0 1rem;
@@ -181,9 +198,20 @@ header nav ul {
 header nav a {
   color: var(--purple);
   font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+header nav a:hover,
+header nav a:focus {
+  background: var(--pink);
+  color: var(--purple);
+  transform: translateY(-2px);
 }
 
 header.nav.open nav {
+  display: flex;
   max-height: 520px;
   opacity: 1;
   transform: translateY(0);
@@ -196,24 +224,6 @@ header.nav.open nav {
   flex-direction: column;
   padding: 1rem 0;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-/* Hamburger button styles */
-.hamburger {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-}
-
-.hamburger.toggle-icon {
-  font-size: 1.25rem;
-}
-
-.hamburger.is-open {
-  transform: rotate(90deg);
 }
 
 /* --------------------
@@ -306,14 +316,6 @@ header.nav.open nav {
 .hamburger:focus,
 .hamburger:focus-visible {
   background: rgba(255, 255, 255, 0.06);
-  outline: none;
-}
-
-header nav a:hover,
-header nav a:focus,
-header nav a:focus-visible {
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 6px;
   outline: none;
 }
 
@@ -789,13 +791,22 @@ footer {
   }
 
   header nav {
-    display: flex;
+    display: flex !important;
+    position: static !important;
+    background: none !important;
+    box-shadow: none !important;
+    max-height: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    padding: 0 !important;
+    z-index: auto !important;
   }
 
   header nav ul {
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
+    padding: 0;
   }
 
   header nav ul li {
@@ -803,13 +814,18 @@ footer {
   }
 
   header nav a {
-    color: var(--bg);
-    padding: 0.4rem 0.6rem;
-    border-radius: 6px;
+    color: var(--purple);
+    padding: 0.75rem 1.25rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
 
-  header nav a:hover {
-    background: rgba(255, 255, 255, 0.06);
+  header nav a:hover,
+  header nav a:focus {
+    background: var(--pink);
+    color: var(--purple);
+    transform: translateY(-2px);
   }
 
   .hero-text h1 {
