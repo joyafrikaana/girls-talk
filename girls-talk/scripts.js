@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
 // scripts.js - externalized from index.html
 
 // Initialize the mission Swiper, mentors slider, hamburger (safe no-op if not present),
