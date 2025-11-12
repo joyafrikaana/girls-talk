@@ -8,7 +8,6 @@
   --container-padding: 1rem;
   --max-width: 1200px;
   --section-padding: 3rem 0;
-  --section-title-size: 2.5rem;
   --h2-size: 2rem;
   --h3-size: 1.5rem;
   --anim-duration: 450ms;
@@ -741,7 +740,6 @@ footer {
     gap: 2rem;
   }
 
-  /* Testimonial tweaks for tablet */
   .testimonial {
     padding: 1.75rem 1rem;
   }
@@ -786,7 +784,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-  /* Desktop: show nav inline and hide hamburger */
   .hamburger {
     display: none;
   }
@@ -875,7 +872,6 @@ footer {
 }
 
 @media (min-width: 1024px) {
-  /* Enhanced desktop typography */
   :root {
     --section-padding: 5rem 0;
     --section-title-size: 3.5rem;
@@ -884,7 +880,6 @@ footer {
     --container-padding: 2rem;
   }
 
-  /* Hero section improvements - balanced desktop layout */
   .hero {
     padding: 6rem 0;
     min-height: 85vh;
@@ -936,14 +931,12 @@ footer {
     justify-content: flex-start;
   }
 
-  /* Button improvements */
   .btn {
     padding: 1rem 2.5rem;
     font-size: 1.1rem;
     font-weight: 600;
   }
 
-  /* Section improvements */
   .about,
   .mentors-section,
   .vision-section,
@@ -951,7 +944,6 @@ footer {
     padding: 5rem 0;
   }
 
-  /* Mission section */
   .mission-swiper {
     height: 400px;
   }
@@ -960,7 +952,6 @@ footer {
     font-size: 1.2rem;
   }
 
-  /* Vision cards improvements */
   .vision-card {
     padding: 3rem 2rem;
   }
@@ -974,7 +965,6 @@ footer {
     font-size: 1.1rem;
   }
 
-  /* Mentor cards improvements */
   .mentor-card {
     padding: 3rem 2.5rem;
   }
@@ -1002,13 +992,12 @@ footer {
     padding: 0.5rem 0;
   }
 
-  /* Better grid layouts for desktop */
   .vision-grid {
-    display: grid; /* Changed from flex to grid */
-    grid-template-columns: repeat(4, 1fr); /* Updated to 4 columns */
-    gap: 3rem; /* Maintain gap */
-    max-width: none; /* Removed max-width to allow full width */
-    margin: 0 auto; /* Center the grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    max-width: none;
+    margin: 0 auto;
   }
 
   .mentors-grid {
@@ -1019,16 +1008,13 @@ footer {
     margin: 0 auto;
   }
 
-  /* About section desktop layout - h2 full width, content row below */
   .about .container {
-    /* Keep the heading full-width above the content */
     display: block;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 
-  /* Make the heading span the full container and sit above the side-by-side content */
   .about .container > h2 {
     width: 100%;
     text-align: center;
