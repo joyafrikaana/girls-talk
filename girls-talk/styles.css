@@ -1,9 +1,3 @@
-/* ==========================================================
-   Girls Talk - Clean Consolidated Stylesheet
-   Mobile-first responsive design with no duplications
-   ========================================================== */
-
-/* CSS Variables */
 :root {
   --purple: #340334;
   --pink: #ff91da;
@@ -20,7 +14,6 @@
   --anim-duration: 450ms;
 }
 
-/* Reset / base */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,15 +23,14 @@
 html,
 body {
   height: 100%;
-}
-
-/* Smooth page scrolling */
-html {
   scroll-behavior: smooth;
 }
 
-/* Page load fade-in */
 body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity var(--anim-duration) ease,
@@ -48,13 +40,6 @@ body {
 body.is-loaded {
   opacity: 1;
   transform: none;
-}
-
-body {
-  font-family: var(--font);
-  color: var(--text);
-  background: var(--bg);
-  line-height: 1.6;
 }
 
 a {
@@ -67,7 +52,6 @@ img {
   display: block;
 }
 
-/* Reveal on scroll */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(20px);
@@ -80,7 +64,6 @@ img {
   transform: none;
 }
 
-/* Gentle hover animations for cards/buttons */
 .vision-card,
 .mentor-card,
 .content-box {
@@ -105,12 +88,10 @@ img {
   transform: translateY(2px) scale(0.995);
 }
 
-/* Section styling */
 section {
   padding: var(--section-padding);
 }
 
-/* Typography hierarchy */
 h1 {
   font-size: 2.5rem;
   font-weight: 800;
@@ -119,18 +100,16 @@ h1 {
 
 h2,
 .section-title {
-  font-size: var(--section-title-size);
+  font-size: var(--h2-size);
   font-weight: 700;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
   text-align: center;
   color: var(--purple);
-  /* ensure consistent width across sections */
   max-width: var(--max-width);
   width: 100%;
   padding: 0 var(--container-padding);
 }
 
-/* Section-specific title colors */
 .mentors-section h2,
 .mentors-section .section-title {
   color: var(--pink);
@@ -148,7 +127,6 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Layout container utility */
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -156,44 +134,37 @@ p {
   padding: 0 var(--container-padding);
 }
 
-/* --------------------
-   Header / Navigation
-   -------------------- */
+/* Header / Navigation */
 header.nav {
-  background: var(--purple);
-  color: var(--bg);
+  background: var(--light-purple);
+  color: var(--purple);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem var(--container-padding);
+  position: relative;
 }
 
 .logo {
   font-weight: 800;
   font-size: 1.25rem;
-  color: var(--bg);
+  color: var(--purple);
 }
 
 .hamburger {
   background: none;
   border: none;
-  color: var(--bg);
+  color: var(--purple);
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* Navigation: default mobile-first (collapsed) */
-header.nav {
-  position: relative;
-}
-
-/* Navigation (mobile): keep in flow but hidden via max-height for animation */
 header nav {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
   padding: 0 1rem;
-  max-height: 0; /* collapse */
+  max-height: 0;
   overflow: hidden;
   opacity: 0;
   transform: translateY(-8px);
@@ -208,27 +179,27 @@ header nav ul {
   padding: 1rem 0;
 }
 
-header.nav {
-  background: var(--light-purple);
+header nav a {
   color: var(--purple);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.9rem var(--container-padding);
+  font-weight: 600;
 }
+
+header.nav.open nav {
+  max-height: 520px;
+  opacity: 1;
   transform: translateY(0);
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  background: var(--purple);
+  background: var(--light-purple);
   z-index: 40;
   flex-direction: column;
   padding: 1rem 0;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Hamburger visual/button states */
+/* Hamburger button styles */
 .hamburger {
   width: 40px;
   height: 40px;
@@ -263,7 +234,7 @@ header.nav {
 
 .hero-text h1 {
   color: var(--purple);
-  font-size: 2.4rem; /* increased for better legibility on mobile */
+  font-size: 2.4rem;
   font-weight: 900;
   line-height: 1.06;
 }
@@ -305,12 +276,11 @@ header.nav {
 }
 
 .btn-pink {
-  background: transparent;
-  border: 2px solid var(--purple);
+  background: var(--pink);
+  border: 2px solid var(--pink);
   color: var(--purple);
 }
 
-/* Button hover + focus styles */
 .btn:hover,
 .btn:focus,
 .btn:focus-visible {
@@ -322,18 +292,17 @@ header.nav {
 .btn-purple:hover,
 .btn-purple:focus,
 .btn-purple:focus-visible {
-  background: #2a022a; /* slightly darker purple */
+  background: #2a022a;
 }
 
 .btn-pink:hover,
 .btn-pink:focus,
 .btn-pink:focus-visible {
-  background: var(--pink);
+  background: #ff6fb7;
   color: #340334;
   border-color: transparent;
 }
 
-/* Hamburger hover/focus */
 .hamburger:hover,
 .hamburger:focus,
 .hamburger:focus-visible {
@@ -341,7 +310,6 @@ header.nav {
   outline: none;
 }
 
-/* Navigation link hover + focus */
 header nav a:hover,
 header nav a:focus,
 header nav a:focus-visible {
@@ -367,9 +335,6 @@ header nav a:focus-visible {
   object-fit: cover;
 }
 
-/* --------------------
-   Values / Testimonial
-   -------------------- */
 .values {
   display: grid;
   grid-template-columns: 1fr;
