@@ -164,67 +164,40 @@
   }
 
   function initTestimonialCarousel() {
-    console.log("Initializing testimonial carousel...");
-
+    // Use the same sliding animation for all devices
     const carousel = document.querySelector(".testimonial-carousel");
-    if (!carousel) {
-      console.log("Testimonial carousel not found");
-      return;
-    }
+    if (!carousel) return;
 
+    const track = carousel.querySelector(".testimonial-track");
     const slides = carousel.querySelectorAll(".testimonial-slide");
 
-    console.log("Found slides:", slides.length);
+    if (!track || slides.length === 0) return;
 
-    if (slides.length === 0) {
-      console.log("No slides found");
-      return;
-    }
-
-    let currentIndex = 0;
+    let currentSlide = 0;
     const totalSlides = slides.length;
 
-    function showSlide(index) {
-      console.log("Showing slide:", index);
-
-      slides.forEach((slide) => slide.classList.remove("active"));
-
-      if (slides[index]) {
-        slides[index].classList.add("active");
-        console.log("Activated slide:", index);
-      }
-
-      currentIndex = index;
+    function moveToSlide(slideIndex) {
+      // Use transform for all devices now - same as desktop
+      const translateX = -slideIndex * 100;
+      track.style.transform = `translateX(${translateX}%)`;
+      currentSlide = slideIndex;
     }
 
     function nextSlide() {
-      const next = (currentIndex + 1) % totalSlides;
-      console.log("Moving to next slide:", next);
-      showSlide(next);
+      const next = (currentSlide + 1) % totalSlides;
+      moveToSlide(next);
     }
 
-    console.log("Initializing first slide");
-    showSlide(0);
+    // Initialize first slide
+    moveToSlide(0);
 
-    console.log("Starting auto-scroll...");
-    let autoInterval = setInterval(() => {
-      console.log("Auto-scroll triggering...");
-      nextSlide();
-    }, 3000);
+    // Auto advance
+    setInterval(nextSlide, 4000);
 
-    carousel.addEventListener("mouseenter", () => {
-      console.log("Pausing auto-scroll");
-      clearInterval(autoInterval);
+    // Handle window resize
+    window.addEventListener("resize", () => {
+      moveToSlide(currentSlide);
     });
-
-    carousel.addEventListener("mouseleave", () => {
-      console.log("Resuming auto-scroll");
-      autoInterval = setInterval(() => {
-        nextSlide();
-      }, 3000);
-    });
-
-    console.log("Testimonial carousel initialization complete");
   }
 
   document.addEventListener("DOMContentLoaded", () => {

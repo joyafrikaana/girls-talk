@@ -1107,6 +1107,16 @@ footer {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
+  .testimonial blockquote span {
+    display: block !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .testimonial blockquote span:last-child {
+    margin-bottom: 0 !important;
+  }
   .testimonial .author {
     font-size: 0.9rem;
     margin-top: 1rem;
@@ -1195,6 +1205,16 @@ footer {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
+  .testimonial blockquote span {
+    display: block !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .testimonial blockquote span:last-child {
+    margin-bottom: 0 !important;
+  }
   .testimonial .author {
     font-size: 0.95rem;
     margin-top: 1rem;
@@ -1244,6 +1264,15 @@ footer {
     hyphens: auto !important;
     display: block !important;
     box-sizing: border-box !important;
+  }
+  .testimonial blockquote span {
+    display: block !important;
+    margin-bottom: 0.3rem !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .testimonial blockquote span:last-child {
+    margin-bottom: 0 !important;
   }
 }
 @media (min-width: 768px) {
